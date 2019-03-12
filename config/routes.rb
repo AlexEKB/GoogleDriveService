@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   root to: "users#index"
-  devise_for :users
+
+  namespace :users do
+    get 'omniauth_callbacks/google_oauth2'
+  end
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
