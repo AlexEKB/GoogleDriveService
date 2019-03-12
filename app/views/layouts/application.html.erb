@@ -19,7 +19,7 @@
         <% if user_signed_in? %>
           <li><%= link_to 'Профиль', edit_user_registration_path %></li>
           <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
-          <li><%= link_to 'Загрузка CSV в Гугл таблицу', new_user_registration_path %></li>
+          <li><%= link_to 'Загрузка CSV в Гугл таблицу', new_document_path %></li>
         <% else %>
           <li><%= link_to 'Войти', user_google_oauth2_omniauth_authorize_path %></li>
           <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
